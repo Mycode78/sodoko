@@ -9,7 +9,7 @@ public interface SudokuDao {
 
     @Insert
     void insert(SudokuEntity sudoku);
-//n
+
     @Query("SELECT * FROM sudoku ORDER BY id DESC LIMIT 1")
     SudokuEntity loadLast();
 }
