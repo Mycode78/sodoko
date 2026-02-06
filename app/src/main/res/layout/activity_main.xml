@@ -21,5 +21,5 @@
         android:layout_weight="1"
         android:rowCount="9"
         android:columnCount="9"
-        android:padding="2dp"/>
+        android:padding="3dp"/>
 </LinearLayout>

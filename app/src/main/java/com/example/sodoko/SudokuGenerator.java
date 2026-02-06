@@ -22,7 +22,7 @@ public class SudokuGenerator {
     }
 
 
-
+//all ok
     private boolean fill(int[][] grid) {
         for (int r = 0; r < SIZE; r++) {
             for (int c = 0; c < SIZE; c++) {
