@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             puzzle = stringToGrid(last.grid);
         } else {
             SudokuGenerator generator = new SudokuGenerator();
-            puzzle = generator.generatePuzzle(45); // درجه متوسط
+            puzzle = generator.generatePuzzle(45); // 1درجه متوسط
             saveGame();
         }
     }
