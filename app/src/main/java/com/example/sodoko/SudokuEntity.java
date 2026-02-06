@@ -1,7 +1,5 @@
 package com.example.sodoko;
 
-
-
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -11,5 +9,6 @@ public class SudokuEntity {
     @PrimaryKey(autoGenerate = true)
     public int id;
 
-    public String grid;   // 81-char string
+
+    public String grid;
 }

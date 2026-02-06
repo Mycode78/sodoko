@@ -1,7 +1,5 @@
 package com.example.sodoko;
 
-
-
 import android.content.Context;
 
 import androidx.room.Database;

@@ -1,20 +1,27 @@
 package com.example.sodoko;
 
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 public class SudokuGenerator {
 
     private static final int SIZE = 9;
-    private static final int BOX = 3;
+    private final Random random = new Random();
 
-    public int[][] generateSolvedGrid() {
-        int[][] grid = new int[SIZE][SIZE];
-        fill(grid);
-        return grid;
+
+    public int[][] generatePuzzle(int emptyCells) {
+        int[][] solved = new int[SIZE][SIZE];
+        fill(solved);
+
+        int[][] puzzle = copyGrid(solved);
+        removeNumbers(puzzle, emptyCells);
+
+        return puzzle;
     }
+
+
 
     private boolean fill(int[][] grid) {
         for (int r = 0; r < SIZE; r++) {
@@ -51,5 +58,26 @@ public class SudokuGenerator {
                 if (g[i][j] == n) return false;
 
         return true;
+    }
+
+
+
+    private void removeNumbers(int[][] grid, int emptyCells) {
+        while (emptyCells > 0) {
+            int r = random.nextInt(9);
+            int c = random.nextInt(9);
+
+            if (grid[r][c] != 0) {
+                grid[r][c] = 0;
+                emptyCells--;
+            }
+        }
+    }
+
+    private int[][] copyGrid(int[][] src) {
+        int[][] copy = new int[9][9];
+        for (int i = 0; i < 9; i++)
+            System.arraycopy(src[i], 0, copy[i], 0, 9);
+        return copy;
     }
 }
